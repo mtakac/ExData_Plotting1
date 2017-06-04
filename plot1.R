@@ -14,7 +14,7 @@ plot1 <- function() {
     print("Done!")
 
     ## Open connection to png graphic device
-    print("Writting graph into file './plot.png'...")
+    print("Writting graph into file './plot1.png'...")
     png(filename = "./plot1.png")
     ## Plot data into graph
     hist(df_feb$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")

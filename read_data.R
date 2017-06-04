@@ -1,8 +1,6 @@
 library(dplyr)
-library(lubridate)
 
-## Read data from file into data frame. Mutates Date and Time variable values using
-## lubridate's dmy and hms functions.
+## Read data from file into data frame.
 ## Args: file - a path to file with data
 ##       nrows (optional) - number of rows to read in
 ## Return: data frame constructed by dplyr method tlb_df()
@@ -10,5 +8,5 @@ read_data <- function(file, nrows = -1) {
     print(paste("Reading in data from", file, "..."))
     df <- tbl_df(read.table(file, sep=";", header = TRUE, na.strings = "?", nrows = nrows))
     print("Done!")
-    mutate(df, Date = dmy(Date), Time = hms(Time))
+    df
 }
